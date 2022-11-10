@@ -1,0 +1,35 @@
+## Leading Question 
+Six Degrees of Wikipedia. How many hyperlinks are necessary to get from one specific Wikipedia article to another specific Wikipedia article?
+## Dataset Acquisition
+    We will be using a dataset of wikipedia articles that we found on stanford.edu. This dataset contains the titles of wikipedia articles and the links contained in them to other articles
+
+## Data Format
+    The data will be in TSV foramt form the dataset. The dataset is composed of 2 seperate files - one which contains the article titles (4,600 articles) and one which contains all the links from the article (120,000 links). We plan on using all of the data. 
+
+## Data Correction
+    We will ensure that all invalid links and are filtered out when we clean the dataset. The dataset is being pulled from a stanford database so therefore its most likely alreadly processed and cleaned. 
+
+## Data Storage
+    Since we are using a TSV file, the total storage cost for our dataset is simply the amount of lines of data inside of the files. Since we have 4,600 + 120,000 lines, we maintian this linearity and can be reduced the total storage costs down to O(n)
+    
+## Algorithm 
+    Djikstra
+        input: 2 article titles which will be used to determine the shortest path from one article to another 
+        output:number of paths and shortest path 
+        runtime: O(V^2) where V is the number of vertices 
+            
+    DFS:
+        input: 2 article titles which will be used to determine the shortest path from one article to another 
+        output:number of paths and shortest path 
+        runtime: O(V+E) since we're using an adjacency list, where V is the number of vertices and E is the number of edges
+
+    Layered graph drawing
+        input: All of the paths
+        output: A visual of all of the paths in a GUI
+        runtime: O(mn) with n vertices and m edges
+
+## Timeline
+
+Data acquisiton and cleaning - first week
+Building Djkistra's and other algos - 2nd week
+final testing and implenenting image output, written report, presentation 3rd week
