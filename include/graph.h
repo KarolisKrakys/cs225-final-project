@@ -32,7 +32,7 @@ class Graph {
         std::vector<Edge*> incidentEdges(const Vertex& v);
         bool areAdjacent(const Vertex& v1, const Vertex& v2) const;
         std::vector<Vertex> BFS(Vertex start,Vertex destination);
-        void findPath(Vertex start, Vertex destination, std::map<Vertex, Vertex> parent);
+        std::vector<Vertex> findPath(Vertex start, Vertex destination, std::map<Vertex, Vertex>& parent);
         std::unordered_map<Vertex, std::vector<Edge*>> adjlist;
     private:
         size_t num_nodes;

@@ -1,5 +1,5 @@
 #include "include/graph.h"
-
+#include <unordered_set>
 Graph::Graph(const std::string& file_vertex, const std::string& file_connections){ 
     std::ifstream vertices(file_vertex);
     std::ifstream edges(file_connections);
@@ -36,55 +36,54 @@ bool Graph::areAdjacent(const Vertex& v1, const Vertex& v2) const { // does v1 p
         if(adjlist.at(v1).at(i)->destination_ == v2)
             return true;
     }
-    return true;
+    return false;
 }
 std::vector<Graph::Edge*> Graph::incidentEdges(const Vertex& v) {
     return adjlist.at(v);
 }
 
 
-void Graph::findPath(Vertex start,Vertex destination, std::map<Vertex, Vertex> parent) {
-    // std::vector<Vertex> to_return;
-    if(start == destination || destination == "") {
-        // to_return.push_back(start);
-        std::cout<<start << std::endl;
-    } else {
-        findPath(start, parent[destination], parent);
-        // to_return.push_back(destination);
-        std::cout<<destination << std::endl;
-    }
-    // return to_return;
+std::vector<Vertex> Graph::findPath(Vertex start, Vertex destination, std::map<Vertex, Vertex>& parent) {
+  std::vector<Vertex> path;
+  Vertex current = destination;
+  while (current != start) {
+    path.push_back(current);
+    current = parent[current];
+  }
+  path.push_back(start);
+  std::reverse(path.begin(), path.end());
+  return path;
 }
 
 std::vector<Vertex> Graph::BFS(Vertex start, Vertex destination) {
-    std::map<Vertex, int> distance;
-    std::map<Vertex, bool> visited;
-    std::map<Vertex, Vertex> parent;
-    std::vector<std::string> path;
-    std::queue<Vertex> q;
-    distance[start] = 0;
-    visited[start] = true;
-    q.push(start);
+  std::unordered_set<Vertex> visited;
+  std::queue<Vertex> q;
+  q.push(start);
+  std::map<Vertex, Vertex> parent;
 
-    while(!q.empty()) {
-        Vertex front = q.front();
-        q.pop();
+  while(!q.empty()) {
+    Vertex front = q.front();
+    q.pop();
 
-        for(int i = 0; i < adjlist[front].size(); i++) {
-            if(visited.find(adjlist[front][i]->origin_) == visited.end()) {
-                q.push(adjlist[front][i]->origin_);
-                distance[adjlist[front][i]->origin_] = distance[front] + 1;
-                parent[adjlist[front][i]->origin_] = front;
-                visited[adjlist[front][i]->origin_] = true;
-                std::cout << adjlist[front][i]->origin_ << std::endl;
-            }
-        }
+    for(int i = 0; i < adjlist[front].size(); i++) {
+      if(visited.find(adjlist[front][i]->origin_) == visited.end()) {
+        q.push(adjlist[front][i]->origin_);
+        visited.insert(adjlist[front][i]->origin_);
+         parent[adjlist[front][i]->origin_] = front;
+      }
     }
-    std::vector<std::string> ret;
-    if(distance.find(start) != distance.end()) {
-        findPath(start, destination, parent);
-    } else {
-        std::cout << "No path found :(" << std::endl;
+  }
+
+  std::vector<Vertex> ret;
+  if(visited.find(destination) != visited.end()) {
+    ret = findPath(start, destination, parent);
+
+    for (const Vertex& v : ret) {
+      std::cout << v << " ";
     }
-    return ret;
-}   
+    std::cout << std::endl;
+  } else {
+    std::cout << "No path found :(" << std::endl;
+  }
+  return ret;
+}
