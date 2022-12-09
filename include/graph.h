@@ -6,7 +6,8 @@
 #include <iostream>
 #include <algorithm>
 #include <sstream>
-
+#include <map>
+#include <queue>
 // bones of the graph class
 typedef std::string Vertex;
 
@@ -30,6 +31,9 @@ class Graph {
         void insertEdge(const Vertex v1, const Vertex v2); // v1 will point to v2;
         std::vector<Edge*> incidentEdges(const Vertex& v);
         bool areAdjacent(const Vertex& v1, const Vertex& v2) const;
-    private:
+        std::vector<Vertex> BFS(Vertex start,Vertex destination);
+        void findPath(Vertex start, Vertex destination, std::map<Vertex, Vertex> parent);
         std::unordered_map<Vertex, std::vector<Edge*>> adjlist;
+    private:
+        size_t num_nodes;
 };
