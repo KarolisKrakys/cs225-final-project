@@ -124,6 +124,8 @@ cs225-final: CMakeFiles/cs225-final.dir/main.cpp.o
 cs225-final: CMakeFiles/cs225-final.dir/graph.cpp.o
 cs225-final: CMakeFiles/cs225-final.dir/tests.cpp.o
 cs225-final: CMakeFiles/cs225-final.dir/build.make
+cs225-final: _deps/catch2-build/src/libCatch2Main.a
+cs225-final: _deps/catch2-build/src/libCatch2.a
 cs225-final: CMakeFiles/cs225-final.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable cs225-final"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cs225-final.dir/link.txt --verbose=$(VERBOSE)

@@ -32,3 +32,15 @@
 /Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles/test.dir
 /Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles/edit_cache.dir
 /Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles/rebuild_cache.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/CMakeFiles/package.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/CMakeFiles/package_source.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/CMakeFiles/test.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/CMakeFiles/edit_cache.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/CMakeFiles/rebuild_cache.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/src/CMakeFiles/Catch2.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/src/CMakeFiles/package.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/src/CMakeFiles/package_source.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/src/CMakeFiles/test.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/src/CMakeFiles/edit_cache.dir
+/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/src/CMakeFiles/rebuild_cache.dir
