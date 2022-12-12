@@ -29,6 +29,9 @@ void Graph::insertVertex(const std::string& name){
 void Graph::insertEdge(Vertex v1, Vertex v2) { // v1 will point to v2;
     Edge* to_push = new Edge(v1, v2);
     adjlist[v1].push_back(to_push);
+    ingoing_links[v2].push_back(v1);
+    all_vertices.push_back(v1);
+    all_vertices.push_back(v2);
 }
 
 bool Graph::areAdjacent(const Vertex& v1, const Vertex& v2) const { // does v1 point to v2
@@ -86,4 +89,33 @@ std::vector<Vertex> Graph::BFS(Vertex start, Vertex destination) {
     std::cout << "No path found :(" << std::endl;
   }
   return ret;
+}
+
+
+void Graph::computePageRank() {
+  const double DF = 0.85; // damping factor, usually PR uses 0.85
+  const int iteration = 250; // number of iterations
+  // INITIALIZE THE DEFAULT RANKS FOR ALL PAGES
+  std::unordered_map<Vertex, double> newrank;
+  for(const auto& [key, value] : adjlist)
+    rank[key] = 1 / num_nodes;
+  
+  int counter = iteration;
+  while(counter > 0) {
+    double dp = 0;
+    for(const auto& [key, value] : adjlist) {
+      if(!value.empty())
+        continue;
+      dp = dp + DF * rank[key]/num_nodes;
+    }
+    for(const auto& [key, value] : adjlist) {
+      newrank[key] = dp + ((1-DF) / num_nodes);
+      for(const auto& ip : ingoing_links[key]) {
+        newrank[key] = newrank[key] + ((DF*rank[ip])/adjlist[ip].size());
+      }
+    }
+    rank=newrank;
+    counter--;
+  }
+
 }
