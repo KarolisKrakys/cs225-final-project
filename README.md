@@ -43,3 +43,11 @@ After making a build folder and running cmake .. do this:
 make;
 ./tests
 ```
+
+# Results
+
+We have developed a working makefile, and properly read all of the data from the tsv and build a graph.
+Are results are always printed in the console.
+We were able to implement BFS which finds you the shortest path between two articles.
+Also we were able to implement pagerank which ranks the most popular articles from our dataset. 
+Pagerank usually takes a really long time because we do 250 iterations, and the dataset contains a lot of nodes and vertices. 
