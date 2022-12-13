@@ -52,7 +52,7 @@ void Graph::insertEdge(Vertex v1, Vertex v2) { // v1 will point to v2;
 
 bool Graph::areAdjacent(const Vertex& v1, const Vertex& v2) const { // does v1 point to v2
     for(int i = 0; i < adjlist.at(v1).size(); i++) {
-        if(adjlist.at(v1).at(i)->destination_ == v2)
+        if(adjlist.at(v1).at(i)->origin_ == v2)
             return true;
     }
     return false;
