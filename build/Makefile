@@ -524,6 +524,19 @@ cs225-final/fast:
 .PHONY : cs225-final/fast
 
 #=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
 # Target rules for targets named Catch2
 
 # Build rule for target.
@@ -597,29 +610,29 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs225-final.dir/build.make CMakeFiles/cs225-final.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-tests.o: tests.cpp.o
-.PHONY : tests.o
+tests/tests.o: tests/tests.cpp.o
+.PHONY : tests/tests.o
 
 # target to build an object file
-tests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs225-final.dir/build.make CMakeFiles/cs225-final.dir/tests.cpp.o
-.PHONY : tests.cpp.o
+tests/tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/tests.cpp.o
+.PHONY : tests/tests.cpp.o
 
-tests.i: tests.cpp.i
-.PHONY : tests.i
+tests/tests.i: tests/tests.cpp.i
+.PHONY : tests/tests.i
 
 # target to preprocess a source file
-tests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs225-final.dir/build.make CMakeFiles/cs225-final.dir/tests.cpp.i
-.PHONY : tests.cpp.i
+tests/tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/tests.cpp.i
+.PHONY : tests/tests.cpp.i
 
-tests.s: tests.cpp.s
-.PHONY : tests.s
+tests/tests.s: tests/tests.cpp.s
+.PHONY : tests/tests.s
 
 # target to generate assembly for a file
-tests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs225-final.dir/build.make CMakeFiles/cs225-final.dir/tests.cpp.s
-.PHONY : tests.cpp.s
+tests/tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/tests.cpp.s
+.PHONY : tests/tests.cpp.s
 
 # Help Target
 help:
@@ -663,15 +676,16 @@ help:
 	@echo "... Catch2"
 	@echo "... Catch2WithMain"
 	@echo "... cs225-final"
+	@echo "... tests"
 	@echo "... graph.o"
 	@echo "... graph.i"
 	@echo "... graph.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... tests.o"
-	@echo "... tests.i"
-	@echo "... tests.s"
+	@echo "... tests/tests.o"
+	@echo "... tests/tests.i"
+	@echo "... tests/tests.s"
 .PHONY : help
 
 

@@ -11,12 +11,16 @@ include(CPack)
 
 include_directories(include)
 Include(FetchContent)
+include_directories(tests)
 FetchContent_Declare(
   Catch2
   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
   GIT_TAG        v3.0.1 # or a later release
 )
 FetchContent_MakeAvailable(Catch2)
-add_executable(cs225-final main.cpp graph.cpp include/graph.h tests.cpp)
+add_executable(cs225-final main.cpp graph.cpp include/graph.h)
 target_link_libraries(cs225-final PRIVATE Catch2::Catch2WithMain)
+
+add_executable(tests tests/tests.cpp)
+target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
 

@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/shikhar/Desktop/cs225-final-project/include -I/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-src/src/catch2/.. -I/Users/shikhar/Desktop/cs225-final-project/build/generated-includes
+CXX_INCLUDES = -I/Users/shikhar/Desktop/cs225-final-project/include -I/Users/shikhar/Desktop/cs225-final-project/tests -I/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-src/src/catch2/.. -I/Users/shikhar/Desktop/cs225-final-project/build/generated-includes
 
 CXX_FLAGS =  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++17
 

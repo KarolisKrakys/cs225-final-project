@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /Users/shikhar/Desktop/cs225-final-project/build
 
 # The main recursive "all" target.
 all: CMakeFiles/cs225-final.dir/all
+all: CMakeFiles/tests.dir/all
 all: _deps/catch2-build/all
 .PHONY : all
 
@@ -101,6 +102,7 @@ clean: CMakeFiles/ContinuousCoverage.dir/clean
 clean: CMakeFiles/ContinuousMemCheck.dir/clean
 clean: CMakeFiles/ContinuousSubmit.dir/clean
 clean: CMakeFiles/cs225-final.dir/clean
+clean: CMakeFiles/tests.dir/clean
 clean: _deps/catch2-build/clean
 .PHONY : clean
 
@@ -872,12 +874,12 @@ CMakeFiles/cs225-final.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
 CMakeFiles/cs225-final.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs225-final.dir/build.make CMakeFiles/cs225-final.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs225-final.dir/build.make CMakeFiles/cs225-final.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles --progress-num=80,81,82,83 "Built target cs225-final"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles --progress-num=80,81,82 "Built target cs225-final"
 .PHONY : CMakeFiles/cs225-final.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cs225-final.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles 83
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles 82
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cs225-final.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles 0
 .PHONY : CMakeFiles/cs225-final.dir/rule
@@ -890,6 +892,33 @@ cs225-final: CMakeFiles/cs225-final.dir/rule
 CMakeFiles/cs225-final.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cs225-final.dir/build.make CMakeFiles/cs225-final.dir/clean
 .PHONY : CMakeFiles/cs225-final.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/tests.dir
+
+# All Build rule for target.
+CMakeFiles/tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
+CMakeFiles/tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles --progress-num=83,84 "Built target tests"
+.PHONY : CMakeFiles/tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles 81
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shikhar/Desktop/cs225-final-project/build/CMakeFiles 0
+.PHONY : CMakeFiles/tests.dir/rule
+
+# Convenience name for target.
+tests: CMakeFiles/tests.dir/rule
+.PHONY : tests
+
+# clean rule for target.
+CMakeFiles/tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/clean
+.PHONY : CMakeFiles/tests.dir/clean
 
 #=============================================================================
 # Target rules for target _deps/catch2-build/src/CMakeFiles/Catch2.dir
