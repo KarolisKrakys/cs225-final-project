@@ -43,7 +43,7 @@ After making a build folder and running cmake .. do this:
 make;
 ./tests
 ```
-
+We throughouly tested our graph implementation to make sure that each of the functions is working, and to make sure that the files are being parsed properly to build the graph. Additionally, we tested BFS to make sure that it's always finding the shorted path for any given nodes. We were not able test 
 # Results
 
 We have developed a working makefile, and properly read all of the data from the tsv and build a graph.
@@ -51,3 +51,5 @@ Are results are always printed in the console.
 We were able to implement BFS which finds you the shortest path between two articles.
 Also we were able to implement pagerank which ranks the most popular articles from our dataset. 
 Pagerank usually takes a really long time because we do 250 iterations, and the dataset contains a lot of nodes and vertices. 
+
+We were not able to implement our graph visualization algorithm, since we ran out of times and it was too difficult to implement without any external libraries. If we were able to redo this project we would probably choose to work on a strongly connected components algorithm or continue working on visualization if we had the help of external tools. 
