@@ -41,6 +41,7 @@ class Graph {
         size_t getNumNodes();
         size_t getEdgeCountNaive();
         bool equals(Graph other);
+
     private:
         size_t num_nodes;
 };

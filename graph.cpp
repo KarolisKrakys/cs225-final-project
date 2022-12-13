@@ -32,6 +32,7 @@ size_t Graph::getEdgeCountNaive() {
   return output;
 }
 
+
 bool Graph::equals(Graph other) {
     return this->adjlist == other.adjlist;
 }
@@ -133,5 +134,5 @@ void Graph::computePageRank() {
     rank=newrank;
     counter--;
   }
-
 }
+
