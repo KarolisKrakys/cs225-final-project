@@ -19,8 +19,8 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Catch2)
 add_executable(cs225-final main.cpp graph.cpp include/graph.h)
-target_link_libraries(cs225-final PRIVATE Catch2::Catch2WithMain)
+# target_link_libraries(cs225-final PRIVATE Catch2::Catch2WithMain)
 
-add_executable(tests tests/tests.cpp)
+add_executable(tests tests/tests.cpp graph.cpp)
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
 

@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test-all.dir/main.cpp.o CMakeFiles/test-all.dir/graph.cpp.o CMakeFiles/test-all.dir/tests.cpp.o -o test-all  -lCatch2::Catch2WithMain 

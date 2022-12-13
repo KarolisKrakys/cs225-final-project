@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /Users/shikhar/Desktop/cs225-final-project
-BuildDirectory: /Users/shikhar/Desktop/cs225-final-project/build
+SourceDirectory: /Users/carlosinigofernandez/Desktop/cs225final/cs225-final-project
+BuildDirectory: /Users/carlosinigofernandez/Desktop/cs225final/cs225-final-project/build
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: shikhars-mbp.lan
+Site: wirelessprv-10-195-245-47.near.illinois.edu
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Darwin-c++
@@ -21,13 +21,14 @@ LabelsForSubprojects:
 
 # Submission information
 SubmitURL: http://
+SubmitInactivityTimeout: 
 
 # Dashboard start time
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/Applications/CMake.app/Contents/bin/cmake" "/Users/shikhar/Desktop/cs225-final-project"
-MakeCommand: /Applications/CMake.app/Contents/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
+ConfigureCommand: "/opt/homebrew/Cellar/cmake/3.25.1/bin/cmake" "/Users/carlosinigofernandez/Desktop/cs225final/cs225-final-project"
+MakeCommand: /opt/homebrew/Cellar/cmake/3.25.1/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -44,7 +45,7 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: /usr/bin/git
+GITCommand: /opt/homebrew/bin/git
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -57,7 +58,7 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
-UpdateCommand: /usr/bin/git
+UpdateCommand: /opt/homebrew/bin/git
 UpdateOptions: 
 UpdateType: git
 
