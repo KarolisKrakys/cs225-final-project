@@ -24,6 +24,18 @@ size_t Graph::getNumNodes() {
   return num_nodes;
 }
 
+size_t Graph::getEdgeCountNaive() {
+  size_t output = 0;
+  for (std::pair<Vertex, std::vector<Edge*>> it : adjlist) {
+    output += it.second.size();
+  }
+  return output;
+}
+
+bool Graph::equals(Graph other) {
+    return this->adjlist == other.adjlist;
+}
+
 void Graph::insertVertex(const std::string& name){
     Vertex new_vertex("name");
     std::vector<Edge*> new_list;
@@ -45,10 +57,10 @@ bool Graph::areAdjacent(const Vertex& v1, const Vertex& v2) const { // does v1 p
     }
     return false;
 }
+
 std::vector<Graph::Edge*> Graph::incidentEdges(const Vertex& v) {
     return adjlist.at(v);
 }
-
 
 std::vector<Vertex> Graph::findPath(Vertex start, Vertex destination, std::map<Vertex, Vertex>& parent) {
   std::vector<Vertex> path;

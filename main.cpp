@@ -8,9 +8,8 @@ int main() {
     std::string two = "../data/links.tsv";
     Graph thing(one,two);
     Vertex thing1("History_of_Arizona");
-    Vertex thing2("Emu");
+    Vertex thing2("Zulu");
     std::vector<std::string> path = thing.BFS(thing1, thing2);
-    std::cout << "Hello0000" << std::endl;
     std::cout << path.size() << std::endl;
     for(int i = 0; i < path.size(); i++) {
         std::cout << path[i] << " ";

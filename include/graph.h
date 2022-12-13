@@ -39,6 +39,8 @@ class Graph {
         void computePageRank();
         std::unordered_map<std::string, double> rank;
         size_t getNumNodes();
+        size_t getEdgeCountNaive();
+        bool equals(Graph other);
     private:
         size_t num_nodes;
 };
