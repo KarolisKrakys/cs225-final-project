@@ -1,5 +1,6 @@
 #include "include/graph.h"
 #include <unordered_set>
+#include <utility>
 Graph::Graph(const std::string& file_vertex, const std::string& file_connections){ 
     std::ifstream vertices(file_vertex);
     std::ifstream edges(file_connections);
@@ -136,3 +137,20 @@ void Graph::computePageRank() {
   }
 }
 
+void Graph::filterRankings() {
+  maxRank = 0.0;
+  for (const auto&[vert, rankNum] : rank)  {
+    if (rankNum > maxRank) {
+      maxRank = rankNum;
+    }
+    if (filteredRankings.find(rankNum) == filteredRankings.end()) {
+      filteredRankingKeys.push_back(rankNum);
+      std::vector<Vertex> similarRankVerticies;
+      similarRankVerticies.push_back(vert);
+      filteredRankings[rankNum] = similarRankVerticies;
+    } else if (filteredRankings.find(rankNum) != filteredRankings.end()) {
+      filteredRankings.at(rankNum).push_back(vert);
+    }
+  }
+  std::sort(filteredRankingKeys.begin(), filteredRankingKeys.end()); //places highest values at the end
+}

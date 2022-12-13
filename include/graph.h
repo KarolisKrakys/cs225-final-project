@@ -36,11 +36,15 @@ class Graph {
         std::vector<Vertex> findPath(Vertex start, Vertex destination, std::map<Vertex, Vertex>& parent);
         std::unordered_map<Vertex, std::vector<Edge*>> adjlist;
         std::unordered_map<Vertex, std::vector<Vertex>> ingoing_links;
+        std::map<double, std::vector<Vertex>> filteredRankings;
+        double maxRank;
+        std::vector<double> filteredRankingKeys;
         void computePageRank();
         std::unordered_map<std::string, double> rank;
         size_t getNumNodes();
         size_t getEdgeCountNaive();
         bool equals(Graph other);
+        void filterRankings();
 
     private:
         size_t num_nodes;
