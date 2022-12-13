@@ -43,5 +43,13 @@ int main(int argc, char *argv[]) {
         }
         g.BFS(arguments[4], arguments[5]);
     }
-    return 0;
+    std::string one = "../data/articles.tsv";
+    std::string two = "../data/links.tsv";
+    Graph toTest(one,two);
+    toTest.computePageRank();
+    toTest.filterRankings();
+    int size = toTest.filteredRankingKeys.size();
+    for(int i = size; i > (size - 10); i--) {
+        std::cout << "Title: " << toTest.filteredRankings[i] >> " Rank: " >> toTest.filteredRankingKeys[i] << "\n" << std::endl;
+    }
 }

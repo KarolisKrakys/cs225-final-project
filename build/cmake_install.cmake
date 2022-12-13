@@ -1,4 +1,4 @@
-# Install script for directory: /Users/carlosinigofernandez/Desktop/cs225final/cs225-final-project
+# Install script for directory: /Users/shikhar/Desktop/cs225-final-project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/carlosinigofernandez/Desktop/cs225final/cs225-final-project/build/_deps/catch2-build/cmake_install.cmake")
+  include("/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/carlosinigofernandez/Desktop/cs225final/cs225-final-project/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/shikhar/Desktop/cs225-final-project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

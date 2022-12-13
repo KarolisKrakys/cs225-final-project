@@ -1,4 +1,4 @@
-# Install script for directory: /Users/carlosinigofernandez/Desktop/cs225final/cs225-final-project/build/_deps/catch2-src
+# Install script for directory: /Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/carlosinigofernandez/Desktop/cs225final/cs225-final-project/build/_deps/catch2-build/src/cmake_install.cmake")
+  include("/Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-build/src/cmake_install.cmake")
 
 endif()
 

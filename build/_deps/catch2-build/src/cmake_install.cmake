@@ -1,4 +1,4 @@
-# Install script for directory: /Users/carlosinigofernandez/Desktop/cs225final/cs225-final-project/build/_deps/catch2-src/src
+# Install script for directory: /Users/shikhar/Desktop/cs225-final-project/build/_deps/catch2-src/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
