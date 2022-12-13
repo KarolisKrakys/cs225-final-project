@@ -153,23 +153,41 @@ TEST_CASE("Are adjacent false case 2", "[Graph::AreAdjacent]") {
  * visit every node in the graph. We recommend running these test cases seperately from the other test cases in order 
  * to be more efficint with testing!
  * 
-TEST_CASE("simple ranking", "[Graph::PageRank]") { 
-    std::string one = "../data/articles.tsv";
-    std::string two = "../data/links.tsv";
-    Graph toTest(one,two);
-    toTest.computePageRank();
-    REQUIRE(&toTest.rank != NULL);
-}
-
-TEST_CASE("multiple calls dont alter ranks", "[Graph::PageRank]") {
-    std::string one = "../data/articles.tsv";
-    std::string two = "../data/links.tsv";
-    Graph toTest(one,two);
-    toTest.computePageRank();
-    auto originalRankings = toTest.rank;
-    toTest.computePageRank();
-    REQUIRE(toTest.rank == originalRankings);
-}
+ * TEST_CASE("simple ranking", "[Graph::PageRank]") { 
+ *     std::string one = "../data/articles.tsv";
+ *     std::string two = "../data/links.tsv";
+ *     Graph toTest(one,two);
+ *     toTest.computePageRank();
+ *     REQUIRE(&toTest.rank != NULL);
+ * }
+ *
+ *  TEST_CASE("multiple calls dont alter ranks", "[Graph::PageRank]") {
+ *     std::string one = "../data/articles.tsv";
+ *     std::string two = "../data/links.tsv";
+ *     Graph toTest(one,two);
+ *     toTest.computePageRank();
+ *     auto originalRankings = toTest.rank;
+ *     toTest.computePageRank();
+ *     REQUIRE(toTest.rank == originalRankings);
+ * }
 */
+
+TEST_CASE("Get top higest ranked page", "[Graph::filterRankings]") {
+    // Despite there being a path from V1 to V2, they should not be adjacent!
+    std::string one = "../data/articles.tsv";
+    std::string two = "../data/links.tsv";
+    Graph toTest(one,two);
+    toTest.computePageRank();
+    toTest.filterRankings();
+    auto output = toTest.filteredRankingKeys.at(toTest.filteredRankingKeys.size() - 1);
+    double largest = 0.0;
+    for(int i = 1; i < toTest.filteredRankingKeys.size(); i++) {
+        if(toTest.filteredRankingKeys[i] > largest) {
+            largest = toTest.filteredRankingKeys[i];
+        }
+    }
+    REQUIRE(output == largest);
+    REQUIRE(toTest.filteredRankings.at(output) == toTest.filteredRankings.at(largest));
+}
 
 
