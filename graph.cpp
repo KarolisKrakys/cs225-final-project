@@ -20,6 +20,23 @@ Graph::Graph(const std::string& file_vertex, const std::string& file_connections
     }
 }
 
+size_t Graph::getNumNodes() {
+  return num_nodes;
+}
+
+size_t Graph::getEdgeCountNaive() {
+  size_t output = 0;
+  for (std::pair<Vertex, std::vector<Edge*>> it : adjlist) {
+    output += it.second.size();
+  }
+  return output;
+}
+
+
+bool Graph::equals(Graph other) {
+    return this->adjlist == other.adjlist;
+}
+
 void Graph::insertVertex(const std::string& name){
     Vertex new_vertex("name");
     std::vector<Edge*> new_list;
@@ -36,15 +53,15 @@ void Graph::insertEdge(Vertex v1, Vertex v2) { // v1 will point to v2;
 
 bool Graph::areAdjacent(const Vertex& v1, const Vertex& v2) const { // does v1 point to v2
     for(int i = 0; i < adjlist.at(v1).size(); i++) {
-        if(adjlist.at(v1).at(i)->destination_ == v2)
+        if(adjlist.at(v1).at(i)->origin_ == v2)
             return true;
     }
     return false;
 }
+
 std::vector<Graph::Edge*> Graph::incidentEdges(const Vertex& v) {
     return adjlist.at(v);
 }
-
 
 std::vector<Vertex> Graph::findPath(Vertex start, Vertex destination, std::map<Vertex, Vertex>& parent) {
   std::vector<Vertex> path;
@@ -118,5 +135,5 @@ void Graph::computePageRank() {
     rank=newrank;
     counter--;
   }
-
 }
+

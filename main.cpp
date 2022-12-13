@@ -4,6 +4,7 @@
 // to run use the command clang++ -std=c++20 -g -Iincludes main.cpp graph.cpp -o main
 // need to make a makefile
 
+
 std::vector<std::string> argsToStrings(int argCount, char *args[]) {
     std::vector<std::string> ret;
     ret.resize(argCount);
@@ -46,6 +47,7 @@ int main(int argc, char *argv[]) {
             std::cout << "Exiting the program, starting vertex and ending vertex are the same";
         }
         g.BFS(arguments[4], arguments[5]);
+
     }
     return 0;
 }

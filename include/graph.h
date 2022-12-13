@@ -39,6 +39,10 @@ class Graph {
         void sort(std::map<Vertex, double> map);
         void computePageRank();
         std::map<std::string, double> rank;
+        std::unordered_map<std::string, double> rank;
+        size_t getNumNodes();
+        size_t getEdgeCountNaive();
+        bool equals(Graph other);
     private:
         size_t num_nodes;
 };
