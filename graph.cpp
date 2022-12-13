@@ -59,6 +59,7 @@ std::vector<Vertex> Graph::findPath(Vertex start, Vertex destination, std::map<V
 }
 
 std::vector<Vertex> Graph::BFS(Vertex start, Vertex destination) {
+  std::cout << start << " " << destination << std::endl;
   std::unordered_set<Vertex> visited;
   std::queue<Vertex> q;
   q.push(start);
