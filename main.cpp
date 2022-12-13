@@ -35,10 +35,6 @@ int main(int argc, char *argv[]) {
         return 0;
     }
     Graph g(arguments[2], arguments[3]);
-    if(arguments[1] != "bfs" || arguments[1] != "pagerank" || arguments[1] != "visualize"){
-        std::cout << "The only three algorithms are: BFS, Pagerank and visualize. Please try again!";
-        return 0;
-    }
     if(arguments[1] == "pagerank") 
         g.computePageRank();
     if(arguments[1] == "bfs") {
