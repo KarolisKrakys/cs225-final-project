@@ -36,8 +36,9 @@ class Graph {
         std::vector<Vertex> findPath(Vertex start, Vertex destination, std::map<Vertex, Vertex>& parent);
         std::unordered_map<Vertex, std::vector<Edge*>> adjlist;
         std::unordered_map<Vertex, std::vector<Vertex>> ingoing_links;
+        void sort(std::map<Vertex, double> map);
         void computePageRank();
-        std::unordered_map<std::string, double> rank;
+        std::map<std::string, double> rank;
     private:
         size_t num_nodes;
 };

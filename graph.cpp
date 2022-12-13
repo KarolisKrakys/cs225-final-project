@@ -96,7 +96,7 @@ void Graph::computePageRank() {
   const double DF = 0.85; // damping factor, usually PR uses 0.85
   const int iteration = 250; // number of iterations
   // INITIALIZE THE DEFAULT RANKS FOR ALL PAGES
-  std::unordered_map<Vertex, double> newrank;
+  std::map<Vertex, double> newrank;
   for(const auto& [key, value] : adjlist)
     rank[key] = 1 / num_nodes;
   
