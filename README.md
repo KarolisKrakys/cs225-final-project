@@ -32,3 +32,10 @@ To run the program there are multiple options:
   To run pagerank:
   ./cs225-final pagerank ../data/articles.tsv ../data/links.tsv
 ```
+
+# Testing
+After making a build folder and running cmake .. do this:
+```c++
+make;
+./tests
+```
