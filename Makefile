@@ -11,6 +11,8 @@ bin/exec: graph.cc include/graph.h
 bin/tests: tests.cpp graph.cpp include/graph.h 
 	${CXX} ${CXX_FLAGS} tests.cpp -o bin/tests
 
+bin/main: main.cpp graph.cpp include/graph.h 
+	${CXX} ${CXX_FLAGS} main.cpp -o bin/main
 
 .DEFAULT_GOAL := tests
 .PHONY: clean exec tests

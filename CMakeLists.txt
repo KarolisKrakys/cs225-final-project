@@ -18,7 +18,7 @@ FetchContent_Declare(
   GIT_TAG        v3.0.1 # or a later release
 )
 FetchContent_MakeAvailable(Catch2)
-add_executable(cs225-final main.cpp graph.cpp include/graph.h)
+add_executable(cs225-final ../main.cpp graph.cpp include/graph.h)
 # target_link_libraries(cs225-final PRIVATE Catch2::Catch2WithMain)
 
 add_executable(tests tests/tests.cpp graph.cpp)

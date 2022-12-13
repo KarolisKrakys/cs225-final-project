@@ -7,11 +7,11 @@ TEST_CASE( "stupid/1=2", "Prove that one equals 2" ) {
     REQUIRE(one == 2);
 }
 TEST_CASE("Simple Path", "Two links" ) {
-    std::string one = "articles.tsv";
-    std::string two = "links.tsv";
+    std::string one = "../data/articles.tsv";
+    std::string two = "../data/links.tsv";
     Graph thing(one,two);
-    Vertex vertex_one("History_of_Arizona");
-    Vertex vertex_two("Emu");
-    std::vector<std::string> path = thing.BFS(vertex_one, vertex_two);
+    Vertex thing1("History_of_Arizona");
+    Vertex thing2("Emu");
+    std::vector<std::string> path = thing.BFS(thing1, thing2);
     REQUIRE(path.size() == 4);
 }
