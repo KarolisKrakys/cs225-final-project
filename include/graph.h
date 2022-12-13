@@ -38,6 +38,7 @@ class Graph {
         std::unordered_map<Vertex, std::vector<Vertex>> ingoing_links;
         void computePageRank();
         std::unordered_map<std::string, double> rank;
+        size_t getNumNodes();
     private:
         size_t num_nodes;
 };

@@ -20,6 +20,10 @@ Graph::Graph(const std::string& file_vertex, const std::string& file_connections
     }
 }
 
+size_t Graph::getNumNodes() {
+  return num_nodes;
+}
+
 void Graph::insertVertex(const std::string& name){
     Vertex new_vertex("name");
     std::vector<Edge*> new_list;
